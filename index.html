@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<title>CSS Layout</title>
+		<style type="text/css">
+			 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+			 
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: 'Roboto', sans-serif;
+				cursor: default;
+			}
+			
+			.container {
+				width: 100%;
+				height: 100vh;
+				overflow: hidden;
+			}
+			
+			.top {
+				display: flex;
+				justify-content: space-between;
+				padding: 5px 20px 5px 10px;
+				background-color: #000;
+				color: #fff;
+			}
+			
+			.top_left {
+				display: flex;
+			}
+			
+			.top_left_first {
+				margin-right: 20px;
+			}
+			
+			.top_left_first,
+			.top_left_second,
+			.date_and_time,
+			.top_right {
+				padding: 0 10px;
+				border-radius: 10px;
+			}
+			
+			.top_left_first:hover,
+			.top_left_second:hover,
+			.date_and_time:hover,
+			.top_right:hover {
+				background-color: #2d3436;
+			}
+			
+			.top_right .fa-solid {
+				margin: 0 5px;
+			}
+			
+			.info {
+				display: flex;
+				align-items: center;
+				background-color: #eee;
+				padding: 10px;
+				border-bottom: 1px solid #d1d1d1;
+			}
+			
+			.info_left {
+				display: flex;
+			}
+			
+			.info_left_left_arrow,
+			.info_left_right_arrow {
+				width: 40px;
+				height: 40px;
+				background-color: #fff;
+				border: 1px solid #d1d1d1;
+				text-align: center;
+				line-height: 40px;
+				font-size: 30px;
+			}
+			
+			.info_left_left_arrow {
+				border-radius: 5px 0 0 5px;
+				font-weight: 900;
+			}
+			
+			.info_left_left_arrow:hover {
+				background-color: #e8e7e6;
+			}
+			
+			.info_left_right_arrow {
+				border-width: 1px 1px 1px 0;
+				border-radius: 0 5px 5px 0;
+				font-weight: 100;
+				background-color: #f5f3f2;
+			}
+			
+			.info_center {
+				display: flex;
+				margin-left: 100px;
+			}
+			
+			.info_center_first {
+				width: 700px;
+				height: 40px;
+				line-height: 34px;
+				padding: 2px;
+				border: 1px solid #d1d1d1;
+				border-radius: 5px 0 0 5px;
+				background-color: #f5f3f2;
+			}
+			
+			.info_center_first span {
+				display: inline-block;
+				padding: 0 5px;
+				transition: .2s all;
+				border-radius: 5px;
+				font-weight: bolder;	
+				
+			}
+			
+			.info_center_first span.light_color {
+				color: #7f8c8d;
+				font-weight: bolder;
+			}
+			
+			
+			.info_center_first span:hover {
+				background-color: #d1d1d1;
+				color: #000;
+			}
+			
+			.info_center_second {
+				width: 40px;
+				height: 40px;
+				background-color: #fff;
+				border: 1px solid #d1d1d1;
+				border-width: 1px 1px 1px 0;
+				line-height: 40px;
+				text-align: center;
+				border-radius: 0 5px 5px 0;
+			}
+			
+			.info_center_second:hover {
+				background-color: #e8e7e6;
+			}
+			
+			.info_center_third {
+				width: 40px;
+				height: 40px;
+				background-color: #fff;
+				text-align: center;
+				line-height: 40px;
+				border: 1px solid #d1d1d1;
+				border-radius: 5px;
+				margin-left: 10px;
+			}
+			
+			.info_center_third:hover {
+				background-color: #e8e7e6;
+			}
+			
+			.info_right {
+				display: flex;
+			}
+			
+			.info_right_first {
+				display: flex;
+			}
+			
+			.info_right_first_first {
+				width: 40px;
+				height: 40px;
+				background-color: #fff;
+				text-align: center;
+				line-height: 40px;
+				border: 1px solid #d1d1d1;
+				border-radius: 5px 0 0 5px;
+				margin-left: 50px;
+				
+			}
+			
+			.info_right_first_second {
+				width: 30px;
+				height: 40px;
+				background-color: #fff;
+				text-align: center;
+				line-height: 40px;
+				border: 1px solid #d1d1d1;
+				border-radius: 0 5px 5px 0;
+				border-width: 1px 1px 1px 0;
+			}
+			
+			.info_right_first_first:hover,
+			.info_right_first_second:hover {
+				background-color: #e8e7e6;
+			}
+			
+			.info_right_first_third {
+				width: 40px;
+				height: 40px;
+				background-color: #fff;
+				text-align: center;
+				line-height: 40px;
+				border: 1px solid #d1d1d1;
+				border-radius: 5px;
+				margin-left: 10px;
+			}
+			
+			.info_right_first_third:hover {
+				background-color: #e8e7e6;
+			}
+			
+			.info_right_second {
+				display: flex;
+				align-items: center;
+				margin-left: 10px;
+			}
+			
+			.info_right_second_first,
+			.info_right_second_second,
+			.info_right_second_third {
+				width: 25px;
+				height: 25px;
+				background-color: #dcdde1;
+				border-radius: 50%;
+				text-align: center;
+				line-height: 25px;
+				margin: 0 10px;
+				font-size: 12px;
+			}
+			
+			.info_right_second_first:hover,
+			.info_right_second_second:hover,
+			.info_right_second_third:hover {
+				background-color: #bdc3c7;
+			}
+			
+			.main_content {
+				display: flex;
+			}
+			
+			.main_content_left {
+				width: 190px;
+				height: calc(100vh - 90px);
+				background-color: #f5f3f2;
+				border-right: 1px solid #d1d1d1;
+			}
+			
+			.main_content_left_top {
+				border-bottom: 1px solid #d1d1d1;
+				padding: 5px 0;
+			}
+			
+			
+			.main_content_left_top div,
+			.main_content_left_bottom div {
+				position: relative;
+				padding: 10px;
+				font-size: 14px;
+			}
+			
+			.main_content_left_top div:hover,
+			.main_content_left_bottom div:hover {
+				background-color: #e8e7e6;
+			}
+			
+			.main_content_left_top div span,
+			.main_content_left_bottom div span {
+				display: none;
+				position: absolute;
+				bottom: -50px;
+				left: 30%;
+				background-color: #000;
+				opacity: 0.9;
+				color: #fff;
+				padding: 15px;
+				border-radius: 5px;
+			}
+			
+			.main_content_left_top div:hover span,
+			.main_content_left_bottom div:hover span {
+				display: inline-block;
+			}
+			
+			.main_content_left_bottom {
+				padding: 5px 0;
+			}
+			
+			.main_content_left div i {
+				margin-right: 10px;
+			}
+			
+			.main_content_right {
+				flex: 1;
+				background-color: #fff;
+				padding: 10px 50px;
+			}
+			
+			.main_content_right_content {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			
+			.main_content_right_content div {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 100px;
+				height: 110px;
+				overflow: hidden;
+				margin: 10px;
+			}
+			
+			.main_content_right_content div i {
+				font-size: 50px;
+				color: #d1d1d1;
+				margin-bottom: 5px;
+			}
+			
+			.main_content_right_content div:hover i {
+				color: gray;
+			}
+			
+			.main_content_right_content div p {
+				text-align: center;
+			}
+			
+			@media only screen and (max-width: 400px) {
+				* {
+					font-size: 10px;
+				}
+				
+				.top {
+					padding: 5px;
+				}
+				
+				.top_left_first {
+					margin-right: 0px;
+				}
+				
+				/* .top_left_second i {
+					display: none;
+				} */
+				
+				.top_right i {
+					font-size: 8px;
+				}
+				
+				
+				.info {
+					display: block;	
+				}
+				
+				.info_left_left_arrow,
+				.info_left_right_arrow {
+					width: 20px;
+					height: 20px;
+					line-height: 20px;
+					font-size: 10px;
+				}
+				
+				.info_center {	
+					margin: 10px 0;
+				}
+				
+				.info_center_first {
+					width: 100%;
+				}
+				
+				.info_center_first,
+				.info_center_first i,
+				.info_center_first span,
+				.info_center_first b{
+					font-size: 4px;
+				}
+				
+				.info_right {
+					justify-content: space-between;
+				}
+					
+				.info_right_first_first {
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+					margin-left: 0px;
+				
+				}
+			
+				.info_right_first_second {
+					width: 15px;
+					height: 30px;
+					line-height: 30px;
+				}
+				
+				.info_right_first_third {
+					width: 30px;
+					height: 30px;
+					line-height: 30px;
+				}
+				
+				.info_right_second_first,
+				.info_right_second_second,
+				.info_right_second_third {
+					width: 20px;
+					height: 20px;
+					line-height: 20px;
+					margin: 0 5px;
+				}
+				
+				.main_content {
+					display: block;
+				}
+				
+				.main_content_left {	
+					width: 100%;
+					height: auto;
+				}
+				
+				.main_content_left_top {
+					display: flex;
+					justify-content: center;
+					flex-wrap: wrap;
+				}
+				
+				
+				
+				.main_content_left_bottom {	
+					display: flex;
+					flex-wrap: wrap;
+					border-bottom: 1px solid #d1d1d1;
+					
+				}
+				
+				.main_content_right {
+					padding: 10px 20px;
+				}
+			
+				.main_content_right_content div {
+					width: 50px;
+					height: 80px;
+					overflow: hidden;
+					margin: 5px;
+				}
+			
+				.main_content_right_content div i {
+					font-size: 30px;
+				}
+			
+			
+				.main_content_right_content div p {
+					font-size: 8px;
+				}
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="top">
+				<div class="top_left">
+					<div class="top_left_first">
+						Activities
+					</div>
+					<div class="top_left_second">
+						<i class="fa-solid fa-folder"></i>
+						Files
+					</div>
+				</div>
+				<div class="top_center">
+					<div class="date_and_time">
+						Oct 4 20:11
+					</div>
+				</div>
+				<div class="top_right">
+					<i class="fa-solid fa-wifi"></i>
+					<i class="fa-solid fa-volume-high"></i>
+					<i class="fa-solid fa-battery-three-quarters"></i>
+				</div>
+			</div>
+			<div class="info">
+				<div class="info_left">
+					<div class="info_left_left_arrow">
+						&lt;
+					</div>
+					<div class="info_left_right_arrow">
+						&gt;
+					</div>
+				</div>
+				<div class="info_center">
+					<div class="info_center_first">
+						<span class="light_color"><i class="fa-sharp fa-solid fa-house-chimney"></i> Home</span>
+						/ 
+						<span class="light_color">Documents</span>
+						/ 
+						<span class="light_color">WebsiteDevelopment</span> 
+						/ 
+						<span class="light_color">CSS</span> 
+						/ <b>CSSPages</b>
+					</div>
+					<div class="info_center_second">
+						<i class="fa-solid fa-ellipsis-vertical"></i>
+					</div>
+					<div class="info_center_third">
+						<i class="fa-solid fa-magnifying-glass"></i>
+					</div>
+				</div>
+				<div class="info_right">
+					<div class="info_right_first">
+						<div class="info_right_first_first">
+							<i class="fa-solid fa-list"></i>
+						</div>
+						<div class="info_right_first_second">
+							<i class="fa-solid fa-chevron-down"></i>
+						</div>
+						<div class="info_right_first_third">
+							<i class="fa-solid fa-bars"></i>
+						</div>
+					</div>
+					<div class="info_right_second">
+						<div class="info_right_second_first">
+							<i class="fa-solid fa-minus"></i>
+						</div>
+						<div class="info_right_second_second">
+							<i class="fa-solid fa-camera"></i>
+						</div>
+						<div class="info_right_second_third">
+							<i class="fa-solid fa-xmark"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="main_content">
+				<div class="main_content_left">
+					<div class="main_content_left_top">
+						<div class="main_content_left_top_recent">
+							<i class="fa-solid fa-clock-rotate-left"></i>
+							Recent
+							<span>Recent files</span>
+						</div>
+						<div class="main_content_left_top_starred">
+							<i class="fa-sharp fa-solid fa-star"></i>
+							Starred
+							<span>Favorite files</span>
+						</div>
+						<div class="main_content_left_top_home">
+							<i class="fa-sharp fa-solid fa-house-chimney"></i>
+							Home
+							<span>Open your personal folder</span>
+						</div>
+						<div class="main_content_left_top_documents">
+							<i class="fa-solid fa-file-lines"></i>
+							Documents
+							<span>/home/adil/Documents</span>
+						</div>
+						<div class="main_content_left_top_downloads">
+							<i class="fa-solid fa-arrow-down"></i>
+							Downloads
+							<span>/home/adil/Downloads</span>
+						</div>
+						<div class="main_content_left_top_music">
+							<i class="fa-solid fa-music"></i>
+							Music
+							<span>/home/adil/Music</span>
+						</div>
+						<div class="main_content_left_top_pictures">
+							<i class="fa-regular fa-image"></i>
+							Pictures
+							<span>/home/adil/Pictures</span>
+						</div>
+						<div class="main_content_left_top_videos">
+							<i class="fa-sharp fa-solid fa-film"></i>
+							Videos
+							<span>/home/adil/Videos</span>
+						</div>
+						<div class="main_content_left_top_trash">
+							<i class="fa-regular fa-trash-can"></i>
+							Trash
+							<span>Open the trash</span>
+						</div>
+					</div>
+					<div class="main_content_left_bottom">
+						<div class="main_content_left_top_other_locations">
+							<i class="fa-solid fa-plus"></i>
+							Other Locations
+							<span>Show other locations</span>
+						</div>
+					</div>
+				</div>
+				<div class="main_content_right">
+					<div class="main_content_right_content">
+						<div>
+							<i class="fa-regular fa-file-code"></i>
+							<p>CSSLayout.<br />html</p>
+						</div>
+						<div>
+							<i class="fa-solid fa-folder"></i>
+							<p>Programming<br />Languages</p>
+						</div>
+						<div>
+							<i class="fa-solid fa-file-lines"></i>
+							<p>Program.txt</p>
+						</div>
+						<div>
+							<i class="fa-brands fa-css3-alt"></i>
+							<p>style.css</p>
+						</div>
+						<div>
+							<i class="fa-brands fa-python"></i>
+							<p>functions.py</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
